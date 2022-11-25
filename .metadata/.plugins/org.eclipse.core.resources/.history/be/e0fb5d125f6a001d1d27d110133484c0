@@ -1,0 +1,11 @@
+package com.login.config;
+
+import java.io.Serializable;
+
+import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.stereotype.Component;
+
+@Component
+public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Serializable {
+
+}

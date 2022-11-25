@@ -1,0 +1,7 @@
+package com.RetialBank.CustomerService.Service;
+
+public interface CustomerService {
+
+	boolean checkbyssn(long customerssnid);
+
+}
