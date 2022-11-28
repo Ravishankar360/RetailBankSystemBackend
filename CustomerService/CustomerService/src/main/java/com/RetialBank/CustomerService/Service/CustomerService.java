@@ -1,5 +1,7 @@
 package com.RetialBank.CustomerService.Service;
 
+import java.util.ArrayList;
+
 import com.RetialBank.CustomerService.Entity.Customer;
 
 public interface CustomerService {
@@ -11,6 +13,12 @@ public interface CustomerService {
 	String checkstatus(long customerid);
 
 	long addCustomer(Customer customer);
+
+	Boolean checkCustomer(long id);
+
+	ArrayList<Customer> viewallCustomers();
+
+	int changestatus(String string, long id);
 
 
 }

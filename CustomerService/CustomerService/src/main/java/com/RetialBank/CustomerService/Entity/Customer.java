@@ -1,5 +1,7 @@
 package com.RetialBank.CustomerService.Entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,31 +22,57 @@ import lombok.NoArgsConstructor;
 @SequenceGenerator(name = "seqid-gen", sequenceName = "userid", initialValue = 111111111, allocationSize = 1)
 public class Customer {
 
-	@Column(name="customerssnid")
+	@Column(name = "customerssnid")
 	private long customerssnid;
-		
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqid-gen")
 	@Column(name = "customerid")
 	private long customerid;
-	
-	public long getCustomerid() {
-		return customerid;
-	}
 
-	@Column(name="customername")
-	private String customername;
-	
-	@Column(name="contactno")
-	private long contactno;
-	
-	@Column(name="city")
+	@Column(name = "username")
+	private String username;
+
+	@Column(name = "password")
+	private String password;
+
+	@Column(name = "saluatation")
+	private String saluatation;
+
+	@Column(name = "useremail")
+	private String useremail;
+
+	@Column(name = "firstname")
+	private String firstname;
+
+	@Column(name = "lastname")
+	private String lastname;
+
+	@Column(name = "midlename")
+	private String midlename;
+
+	@Column(name = "city")
 	private String city;
-	
-	@Column(name="email")
-	private String email;
-	
-	@Column(name="status")
+
+	@Column(name = "address")
+	private String address;
+
+	@Column(name = "postalcode")
+	private long postalcode;
+
+	@Column(name = "status")
 	private String status;
+
+	@Column(name = "mobilenumber")
+	private long mobilenumber;
+
+	@Column(name = "role")
+	private String role;
+
+	@Column(name = "pan")
+	private String pan;
+
+	@Column(name = "dob")
+	private Date dateOfBirth;
 
 }

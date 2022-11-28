@@ -1,6 +1,9 @@
 package com.RetialBank.CustomerService.Repository;
 
+import javax.transaction.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -17,5 +20,10 @@ public interface CustomerRepo extends JpaRepository<Customer,Long> {
 
 	@Query(value="select * from customer where customerssnid=?1",nativeQuery = true)
 	Customer viewCustomerBySsnid(long ssnid);
+
+	@Modifying
+	@Transactional
+	@Query(value="update customer SET status =?1 WHERE customerid =?2",nativeQuery=true)
+	int changestatus(String status, long cid);
 
 }
