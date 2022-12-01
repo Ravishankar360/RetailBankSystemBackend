@@ -1,6 +1,7 @@
 package com.RetialBank.AccountService.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,13 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public Long createAccount(Account account) {
-		 return  accountRepo.save(account).getAccountId();
+		 Account account1 = new Account();
+		 account1.setAccountType(account.getAccountType());
+		 account1.setCustomerId(account.getCustomerId());
+		 account1.setBalance(0.0);
+		 account1.setAccstatus("Active");
+		 account1.setCreated_at(new Date());
+		 return  accountRepo.save(account1).getAccountId();
 	}
 
 	@Override

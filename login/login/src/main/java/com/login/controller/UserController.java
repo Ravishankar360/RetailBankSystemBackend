@@ -12,6 +12,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +28,7 @@ import com.login.service.JWTUserDetailsService;
 
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class UserController {
 
 	@Autowired
@@ -72,5 +73,12 @@ public class UserController {
 	public ResponseEntity<ArrayList<User>> viewAllCustomers()
 	{
 		return new ResponseEntity<ArrayList<User>>(userDetailsService.viewallCustomers(), HttpStatus.OK);		
+	}
+	
+	//@RequestMapping(value="/getByUserEmail/{username}", method = RequestMethod.GET)
+	@RequestMapping(value = "/getByUserEmail", method = RequestMethod.POST)
+	public ResponseEntity<User> getByUserEmail(@RequestBody UserDTO user)
+	{
+		return new ResponseEntity<User> (userDetailsService.getByUserEmail(user), HttpStatus.OK);
 	}
 }

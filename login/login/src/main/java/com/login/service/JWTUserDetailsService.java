@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.login.DTO.UserDTO;
 import com.login.entity.User;
 import com.login.repo.UserRepo;
 
@@ -58,5 +59,10 @@ public class JWTUserDetailsService implements UserDetailsService {
 		ArrayList<User> user=new ArrayList<User>();
 		user=(ArrayList<User>) userRepo.findAll();
 		return user;
+	}
+
+	public User getByUserEmail(UserDTO user) {
+		String username = user.getUsername();
+		return userRepo.userEmail(username);
 	}
 }

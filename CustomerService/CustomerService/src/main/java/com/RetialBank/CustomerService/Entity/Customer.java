@@ -7,8 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.springframework.data.annotation.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -21,9 +24,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "customer")
 @SequenceGenerator(name = "seqid-gen", sequenceName = "userid", initialValue = 111111111, allocationSize = 1)
 public class Customer {
-
-	@Column(name = "customerssnid")
-	private long customerssnid;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqid-gen")

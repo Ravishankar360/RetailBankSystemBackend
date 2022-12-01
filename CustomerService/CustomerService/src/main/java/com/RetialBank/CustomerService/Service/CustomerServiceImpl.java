@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.RetialBank.CustomerService.Entity.Customer;
 import com.RetialBank.CustomerService.Repository.CustomerRepo;
+import com.RetialBank.CustomerService.Vo.CustomerAccountVo;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -64,7 +65,7 @@ public class CustomerServiceImpl implements CustomerService {
 		newUser.setPan(customer.getPan());
 		newUser.setDateOfBirth(customer.getDateOfBirth());
 	   
-		return  customerRepo.save(newUser).getCustomerid();
+		return customerRepo.save(newUser).getCustomerid();
 		
 	}
 
@@ -92,6 +93,25 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public int changestatus(String status, long cid) {
 		return customerRepo.changestatus(status,cid);
+	}
+
+	@Override
+	public CustomerAccountVo viewAllCustomerById(long id) {
+		return customerRepo.getByCustomerId(id);
+	}
+
+	@Override
+	public ArrayList<CustomerAccountVo> viewallCustomersInfomation() {
+		ArrayList<CustomerAccountVo> csm=new ArrayList<CustomerAccountVo>();
+		csm=(ArrayList<CustomerAccountVo>) customerRepo.findAllRecords();
+		return csm;
+	}
+
+	@Override
+	public Customer getFindEmail(Customer customer) {
+		String useremail = customer.getUsername();
+		Customer cus = customerRepo.getByEmailName(useremail);
+		return cus;
 	}
 
 }

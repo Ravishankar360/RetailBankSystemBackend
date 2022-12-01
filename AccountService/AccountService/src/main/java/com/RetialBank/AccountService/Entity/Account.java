@@ -1,5 +1,7 @@
 package com.RetialBank.AccountService.Entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,5 +33,11 @@ public class Account {
 	
 	@Column(name = "balance")
 	private double balance;
+	
+	@Column(name = "accstatus")
+	private String accstatus;
+	
+	@Column(name = "created_at")
+	private Date created_at;
 	
 }
