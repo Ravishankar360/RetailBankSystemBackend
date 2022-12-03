@@ -18,14 +18,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Transaction {
 	
+	@Column(name="transId")
+	private long transId;
+	
 	@Column(name = "pbalance")
-	double pbalance;
+	private double pbalance;
+	
 	@Column(name = "abalance")
-	double abalance;
+	private double abalance;
+	
 	@Column(name = "accountId")
-	long accountId;
+	private long accountId;
+	
 	@Column(name = "customerId")
-	long customerId;
+	private long customerId;
+	
+	@Column(name = "type")
+	private String type;
 	
 	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)

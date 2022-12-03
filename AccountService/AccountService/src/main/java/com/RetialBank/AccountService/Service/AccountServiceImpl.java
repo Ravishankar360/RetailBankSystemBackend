@@ -63,4 +63,9 @@ public class AccountServiceImpl implements AccountService {
 		return true;
 	}
 
+	@Override
+	public Object updatebalance(double bal, long accountId) {
+		return accountRepo.updatebalance(bal,accountId);
+	}
+
 }

@@ -19,48 +19,33 @@ public class TransactionServiceImpl implements TransactionService {
 	@Autowired
 	private TransactionRepository transRepo;
 
-	//@Autowired
-	//private LoadBalancerClient loadBalancer;
-
 	@Override
-	public Long deposit(Account account) {
-//		ServiceInstance serviceInstance = loadBalancer.choose("RETAIL_BANKING");
-//		System.out.println(serviceInstance.getUri());
-//		String baseUrl = serviceInstance.getUri().toString();
-//		String url = baseUrl + "/api/account/updateBalance?accountId=" + account.getAccountId() + "&amount="
-//				+ account.getBalance() + "&type=credit";
-//		RestTemplate restTemplate = new RestTemplate();
-//		System.out.println("url-" + url);
-//		long ab = 0;
-//		try {
-//			ResponseEntity<Transaction> response = restTemplate.getForEntity(url, Transaction.class);
-//			Transaction tt = response.getBody();
-//			if (tt.getAbalance() < account.getBalance()) {
-//				return ab;
-//			} else {
-//				// tt.setDate(new Date().getTime());
-//				tt.setDate(new Date());
-//				tt.setType("credit");
-//				ab = transRepo.save(tt).getTransId();
-//				return ab;
-//			}
-//		} catch (Exception t) {
-//			t.printStackTrace();
-//		} finally {
-//			return ab;
-//		}
-		return null;
-	}
-
-	@Override
-	public Long withdraw(Account account) {
-		// TODO Auto-generated method stub
-		return null;
+	public Long withdraw(Transaction transaction) {
+		Transaction te = new Transaction();
+		te.setAbalance(transaction.getAbalance());
+		te.setPbalance(transaction.getPbalance());
+		te.setAccountId(transaction.getAccountId());
+		te.setCustomerId(transaction.getCustomerId());
+		te.setType(transaction.getType());
+		te.setDate(new Date());
+		return transRepo.save(te).getTransId();
 	}
 
 	@Override
 	public ArrayList<Transaction> getall() {
 		return (ArrayList<Transaction>) transRepo.findAll();
+	}
+
+	@Override
+	public Long transactionStatement(Transaction transaction) {
+		Transaction te = new Transaction();
+		te.setAbalance(transaction.getAbalance());
+		te.setPbalance(transaction.getPbalance());
+		te.setAccountId(transaction.getAccountId());
+		te.setCustomerId(transaction.getCustomerId());
+		te.setType(transaction.getType());
+		te.setDate(new Date());
+		return transRepo.save(te).getTransId();
 	}
 
 }

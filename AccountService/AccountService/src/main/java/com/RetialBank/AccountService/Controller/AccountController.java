@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.RetialBank.AccountService.Entity.Account;
+import com.RetialBank.AccountService.Entity.Transaction;
 import com.RetialBank.AccountService.Service.AccountService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins="http://localhost:4200")
 public class AccountController {
 	
 	@Autowired
@@ -62,6 +63,29 @@ public class AccountController {
 			return new ResponseEntity<Boolean>(ab,HttpStatus.OK);
 	}
 	
+	@RequestMapping(value="/updateBalance", method =RequestMethod.POST)
+	public ResponseEntity<Transaction> updateBalance(@RequestBody Account account)
+	{
+		Transaction t=new Transaction();
+		Object rows="";
+		t.setAccountId(account.getAccountId());
+		Account a=accountService.viewAccountByAId(account.getAccountId());
+		t.setAbalance(a.getBalance());
+		t.setCustomerId(a.getCustomerId());
+		t.setType(account.getAccountType());
+		if(account.getAccountType().equals("credit"))
+		{
+			rows=accountService.updatebalance(a.getBalance()+account.getBalance(),account.getAccountId());
+			System.out.println("rowsfdf=="+rows);
+			t.setPbalance(a.getBalance() +account.getBalance());
+		}else if (account.getAccountType().equals("debit")){
+			rows=accountService.updatebalance(a.getBalance()-account.getBalance(),account.getAccountId());
+			System.out.println("rowsfdf=="+rows);
+			t.setPbalance(a.getBalance() -account.getBalance());
+		}
+		System.out.println("rows=="+rows);
+		return new ResponseEntity<Transaction>(t,HttpStatus.OK);
+	}
 	
 
 }

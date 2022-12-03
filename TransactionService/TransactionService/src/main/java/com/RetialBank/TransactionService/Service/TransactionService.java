@@ -7,10 +7,11 @@ import com.RetialBank.TransactionService.Entity.Transaction;
 
 public interface TransactionService {
 
-	Long deposit(Account account);
 
-	Long withdraw(Account account);
+	Long withdraw(Transaction transaction);
 
 	ArrayList<Transaction> getall();
+
+	Long transactionStatement(Transaction transaction);
 
 }

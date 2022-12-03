@@ -17,7 +17,7 @@ import com.RetialBank.TransactionService.Entity.Transaction;
 import com.RetialBank.TransactionService.Service.TransactionService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins="http://localhost:4200")
 public class TransactionController {
 
 	@Autowired
@@ -29,13 +29,13 @@ public class TransactionController {
 	}
 	
 	@RequestMapping(value = "/Deposit", method = RequestMethod.POST)
-	public ResponseEntity<Long> deposit(@RequestBody Account account) {
-		return new ResponseEntity<Long>(transactionService.deposit(account), HttpStatus.OK);
+	public ResponseEntity<Long> transactionStatement(@RequestBody Transaction transaction) {
+		return new ResponseEntity<Long>(transactionService.transactionStatement(transaction), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/Withdraw", method = RequestMethod.POST)
-	public ResponseEntity<Long> withdraw(@RequestBody Account account) {
-		return new ResponseEntity<Long>(transactionService.withdraw(account), HttpStatus.OK);
+	public ResponseEntity<Long> withdraw(@RequestBody Transaction transaction) {
+		return new ResponseEntity<Long>(transactionService.withdraw(transaction), HttpStatus.OK);
 	}
 
 }

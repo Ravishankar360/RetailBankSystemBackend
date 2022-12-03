@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@SequenceGenerator(name = "seqid-gen", sequenceName = "transid",initialValue = 500000001, allocationSize = 1)
+@SequenceGenerator(name = "seqid-gen", sequenceName = "transid",initialValue = 500000001)
 @Table(name = "transaction")
 public class Transaction {
 
@@ -37,11 +37,11 @@ public class Transaction {
 	@Column(name = "customerId")
 	private long customerId;
 
-	@Column(name = "datee")
-	Date date;
+	@Column(name = "date")
+	private Date date;
 
 	@Column(name = "type")
-	String type;
+	private String type;
 	
 
 }

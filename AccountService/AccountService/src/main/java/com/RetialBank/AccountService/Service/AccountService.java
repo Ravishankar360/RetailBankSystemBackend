@@ -20,4 +20,6 @@ public interface AccountService {
 
 	Boolean updateAccount(Account ac);
 
+	Object updatebalance(double d, long accountId);
+
 }
