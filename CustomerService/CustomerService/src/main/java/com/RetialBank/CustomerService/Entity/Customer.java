@@ -15,6 +15,7 @@ import org.springframework.data.annotation.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -74,5 +75,28 @@ public class Customer {
 
 	@Column(name = "dob")
 	private Date dateOfBirth;
+
+
+	public Customer(long customerid, String username, String password, String saluatation, String useremail,
+			String firstname, String lastname, String midlename, String city, String address, long postalcode,
+			String status, long mobilenumber, String role, String pan, Date dateOfBirth) {
+		this.customerid = customerid;
+		this.username = username;
+		this.password = password;
+		this.saluatation = saluatation;
+		this.useremail = useremail;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.midlename = midlename;
+		this.city = city;
+		this.address = address;
+		this.postalcode = postalcode;
+		this.status = status;
+		this.mobilenumber = mobilenumber;
+		this.role = role;
+		this.pan = pan;
+		this.dateOfBirth=dateOfBirth;
+	}
+	
 
 }

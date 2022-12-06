@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.RetialBank.CustomerService.Entity.Customer;
+import com.RetialBank.CustomerService.Entity.User;
 import com.RetialBank.CustomerService.Repository.CustomerRepo;
+import com.RetialBank.CustomerService.Repository.UserRepo;
 import com.RetialBank.CustomerService.Vo.CustomerAccountVo;
 
 @Service
@@ -15,6 +17,9 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Autowired
 	private CustomerRepo customerRepo;
+	
+	@Autowired
+	private UserRepo userRepo;
 	
 	//@Autowired
 	//PasswordEncoder bcryptEncoder;
@@ -111,6 +116,14 @@ public class CustomerServiceImpl implements CustomerService {
 	public Customer getFindEmail(Customer customer) {
 		String useremail = customer.getUsername();
 		Customer cus = customerRepo.getByEmailName(useremail);
+		if(cus == null) {
+			Customer cus1 = new Customer();
+			User user= userRepo.getByEmailName(useremail);
+			cus1.setFirstname(user.getFirstname());
+			cus1.setLastname(user.getLastname());
+			cus1.setSaluatation(user.getSaluatation());
+			return cus1;
+		}
 		return cus;
 	}
 

@@ -14,4 +14,6 @@ public interface TransactionService {
 
 	Long transactionStatement(Transaction transaction);
 
+	ArrayList<Transaction> getTransactionStatement(long id);
+
 }

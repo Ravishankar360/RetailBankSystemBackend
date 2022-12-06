@@ -48,4 +48,9 @@ public class TransactionServiceImpl implements TransactionService {
 		return transRepo.save(te).getTransId();
 	}
 
+	@Override
+	public ArrayList<Transaction> getTransactionStatement(long customerid) {
+		return transRepo.getTransactionStatement(customerid);
+	}
+
 }
