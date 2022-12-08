@@ -1,5 +1,0 @@
-package com.login.repo;
-
-public interface UserRepo {
-
-}

@@ -1,5 +1,0 @@
-package com.RetialBank.CustomerService.Repository;
-
-public interface CustomerRepo {
-
-}

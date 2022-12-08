@@ -1,5 +1,0 @@
-package com.RetialBank.AccountService.Service;
-
-public class AccountServiceImpl implements AccountService {
-
-}

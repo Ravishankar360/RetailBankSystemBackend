@@ -2,6 +2,10 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\cogjava3300\CaseStudy2Project\TransactionService"/>
+			<item value="C:\Users\cogjava3300\CaseStudy2Project\AccountService"/>
+			<item value="C:\Users\cogjava3300\spring-boot-jwt-JPA"/>
+			<item value="C:\Users\cogjava3300\CaseStudy2Project\login"/>
 			<item value="C:\Users\cogjava3300\CaseStudy2Project\CustomerService"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -12,5 +16,9 @@
 			<item value="[groupId].[artifactId]-[version]"/>
 			<item value="[name]"/>
 		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
 	</section>
 </section>

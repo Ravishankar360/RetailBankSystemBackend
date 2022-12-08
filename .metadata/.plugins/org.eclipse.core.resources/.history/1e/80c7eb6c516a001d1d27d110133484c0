@@ -1,9 +1,0 @@
-package com.RetialBank.CustomerService.Repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.RetialBank.CustomerService.Entity.Customer;
-
-public interface CustomerRepo extends JpaRepository<Customer,Long> {
-
-}

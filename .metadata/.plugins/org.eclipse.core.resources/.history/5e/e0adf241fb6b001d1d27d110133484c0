@@ -1,5 +1,0 @@
-package com.RetialBank.AccountService.Service;
-
-public interface AccountService {
-
-}
