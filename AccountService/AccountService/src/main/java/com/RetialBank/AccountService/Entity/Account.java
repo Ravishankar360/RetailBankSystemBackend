@@ -39,5 +39,16 @@ public class Account {
 	
 	@Column(name = "created_at")
 	private Date created_at;
+
+	public Account(long accountId, long customerId, String accountType, double balance, String accstatus) {
+		super();
+		this.accountId = accountId;
+		this.customerId = customerId;
+		this.accountType = accountType;
+		this.balance = balance;
+		this.accstatus = accstatus;
+	}
+	
+	
 	
 }

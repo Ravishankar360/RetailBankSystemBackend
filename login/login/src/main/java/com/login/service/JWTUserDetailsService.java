@@ -3,7 +3,6 @@ package com.login.service;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -56,7 +55,7 @@ public class JWTUserDetailsService implements UserDetailsService {
 	}
 
 	public ArrayList<User> viewallCustomers() {
-		ArrayList<User> user=new ArrayList<User>();
+		ArrayList<User> user = new ArrayList<>();
 		user=(ArrayList<User>) userRepo.findAll();
 		return user;
 	}

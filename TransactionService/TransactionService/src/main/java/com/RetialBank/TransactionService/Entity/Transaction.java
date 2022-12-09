@@ -42,6 +42,19 @@ public class Transaction {
 
 	@Column(name = "type")
 	private String type;
+
+	public Transaction(long transId, double pbalance, double abalance, long accountId, long customerId,
+			String type) {
+		super();
+		this.transId = transId;
+		this.pbalance = pbalance;
+		this.abalance = abalance;
+		this.accountId = accountId;
+		this.customerId = customerId;
+		this.type = type;
+	}
+	
+	
 	
 
 }
