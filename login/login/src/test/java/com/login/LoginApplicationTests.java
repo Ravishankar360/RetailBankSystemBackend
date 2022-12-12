@@ -1,5 +1,8 @@
 package com.login;
 
+import java.util.List;
+
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,8 +26,17 @@ class LoginApplicationTests {
         userRepo.save(user);
         User retrievedUser = userRepo.userEmail("Ravi123@gmail.com");
         assertThat(retrievedUser.getPassword().equals(user.getPassword()));
- 
     }
+	
+	@Tag("Dev")
+	@Test
+	void ViewAllUserTest() {
+	        assertThat(true);
+	        List<User> retrievedtUser = userRepo.findAll();
+	        if(!retrievedtUser.isEmpty()) {
+	         assertThat(true);
+	        }
+	 }
 
 	private Object assertThat(boolean b) {
 	  return true;

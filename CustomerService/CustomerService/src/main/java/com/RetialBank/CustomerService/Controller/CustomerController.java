@@ -72,9 +72,10 @@ public class CustomerController {
 		else
 			{b=false;return new ResponseEntity<Boolean>(b, HttpStatus.OK);}		
 	}
+	
 	@RequestMapping(value="/updateCustomer",method=RequestMethod.POST)
 	public ResponseEntity<Boolean> updateCustomer(@RequestBody Customer cm)
-	{
+	 {
 		boolean b=customerService.checkCustomer(cm.getCustomerid());
 		if(b==true)
 		{
@@ -85,7 +86,7 @@ public class CustomerController {
 		{
 			return new ResponseEntity<Boolean>(b, HttpStatus.OK);	
 		}
-	}
+	 }
 
 
 }

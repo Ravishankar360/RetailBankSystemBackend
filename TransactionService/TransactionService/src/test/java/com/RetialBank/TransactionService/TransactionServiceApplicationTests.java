@@ -1,7 +1,13 @@
 package com.RetialBank.TransactionService;
 
+import java.util.List;
+import java.util.Optional;
+
 import javax.persistence.TransactionRequiredException;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,10 +21,7 @@ class TransactionServiceApplicationTests {
 	@Autowired
 	private TransactionRepository transRepository;
 
-	@Test
-	void contextLoads() {
-	}
-	
+	@Tag("Dev")
 	@Test
     void createTransactionStatementTest() {
         Transaction tran = new Transaction(1L,200,0,2323453543L,00000000L,"Debit");
@@ -34,6 +37,41 @@ class TransactionServiceApplicationTests {
         assertThat(true);
        
     }
+	
+	@Test
+	void contextLoads() {
+	}
+	
+	@Tag("Dev")
+	@Test
+	void ViewAllTransactionTest() {
+	        assertThat(true);
+	        List<Transaction> retrievedtran = transRepository.findAll();
+	        if(!retrievedtran.isEmpty()) {
+	         assertThat(true);
+	        }
+	}
+	
+	@Tag("Dev")
+	@Test
+	void ViewAllTransactionByIdTest() {
+		    Long id = 2L;
+	        Optional<Transaction> retrievedtrans = transRepository.findById(id);
+	        if(retrievedtrans.equals(id)) {
+	         assertThat(true);
+	        }
+	 }
+	
+	@AfterEach
+	void tearThis() {
+		System.out.println("@AfterEach Executed");
+	}
+	
+	@AfterAll
+	static void tear() {
+		System.out.println("@AfterAll Executed");
+	
+	}
 	
 	private boolean assertThat(boolean equals) {
 		return true;
