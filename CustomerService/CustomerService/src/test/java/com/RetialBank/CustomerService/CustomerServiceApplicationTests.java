@@ -60,7 +60,6 @@ class CustomerServiceApplicationTests {
 	@AfterAll
 	static void tear() {
 		System.out.println("@AfterAll Executed");
-	
 	}
 
 

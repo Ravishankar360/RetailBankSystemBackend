@@ -64,7 +64,6 @@ class AccountServiceApplicationTests {
 	@AfterAll
 	static void tear() {
 		System.out.println("@AfterAll Executed");
-	
 	}
 
 

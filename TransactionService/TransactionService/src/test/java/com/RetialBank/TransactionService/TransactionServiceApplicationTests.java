@@ -70,7 +70,6 @@ class TransactionServiceApplicationTests {
 	@AfterAll
 	static void tear() {
 		System.out.println("@AfterAll Executed");
-	
 	}
 	
 	private boolean assertThat(boolean equals) {
