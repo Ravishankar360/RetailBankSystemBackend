@@ -13,6 +13,7 @@ public interface UserRepo extends JpaRepository<User,Integer> {
 
 	@Query(value="select * from user where username=?1",nativeQuery = true)
 	User userEmail(String userEmail);
+   
 
 
 }

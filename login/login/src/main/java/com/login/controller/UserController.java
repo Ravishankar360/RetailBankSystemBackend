@@ -28,7 +28,8 @@ import com.login.service.JWTUserDetailsService;
 
 
 @RestController
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
+@CrossOrigin(origins="http://localhost:4200")
 public class UserController {
 
 	@Autowired
@@ -80,5 +81,11 @@ public class UserController {
 	public ResponseEntity<User> getByUserEmail(@RequestBody UserDTO user)
 	{
 		return new ResponseEntity<User> (userDetailsService.getByUserEmail(user), HttpStatus.OK);
+	}
+	
+	@RequestMapping(value="/viewAllUserById/{userid}",method=RequestMethod.GET)
+	public ResponseEntity<User> viewAllCustomerById(@PathVariable("userid") Integer id)
+	{
+		return new ResponseEntity<User>(HttpStatus.OK);		
 	}
 }

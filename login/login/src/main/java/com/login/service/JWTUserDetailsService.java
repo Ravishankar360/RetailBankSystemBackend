@@ -1,6 +1,7 @@
 package com.login.service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -63,5 +64,9 @@ public class JWTUserDetailsService implements UserDetailsService {
 	public User getByUserEmail(UserDTO user) {
 		String username = user.getUsername();
 		return userRepo.userEmail(username);
+	}
+
+	public Optional<User> viewAllUserById(Integer id) {
+		return userRepo.findById(id);
 	}
 }
