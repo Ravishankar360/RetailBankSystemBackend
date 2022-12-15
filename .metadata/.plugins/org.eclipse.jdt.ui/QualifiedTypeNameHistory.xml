@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.boot.test.autoconfigure.graphql.tester.AutoConfigureGraphQlTester"/>
+    <fullyQualifiedTypeName name="javax.persistence.TransactionRequiredException"/>
+    <fullyQualifiedTypeName name="com.RetialBank.TransactionService.Repository.TransactionRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.RetialBank.AccountService.Repository.AccountRepo"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.RetialBank.CustomerService.Entity.Account"/>
+    <fullyQualifiedTypeName name="com.RetialBank.CustomerService.Entity.Customer"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Tag"/>
+    <fullyQualifiedTypeName name="com.RetialBank.AccountService.Entity.Account"/>
+    <fullyQualifiedTypeName name="com.login.entity.User"/>
+    <fullyQualifiedTypeName name="com.RetialBank.TransactionService.Entity.Transaction"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.AfterEach"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.AfterAll"/>
+</qualifiedTypeNameHistroy>
